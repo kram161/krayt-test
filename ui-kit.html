@@ -37,11 +37,15 @@
   <svg class="watch-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0044 1.5C11.0044 0.947715 10.5567 0.5 10.0044 0.5C9.45211 0.5 9.00439 0.947715 9.00439 1.5V3.54989C8.04476 3.64609 7.12848 3.87731 6.27405 4.20772L5.4446 3.05037C5.12289 2.60146 4.49817 2.49836 4.04927 2.82007C3.60036 3.14179 3.49726 3.76651 3.81898 4.21541L4.45792 5.10695C3.92702 5.43178 3.434 5.79271 2.98539 6.17708C1.24791 7.6658 0 9.66836 0 11.5C0 13.3316 1.24791 15.3342 2.98539 16.8229C4.76222 18.3453 7.23586 19.5 10 19.5C12.7639 19.5 15.2376 18.3462 17.0145 16.8241C18.7522 15.3355 20 13.333 20 11.5C20 9.66702 18.7522 7.66444 17.0145 6.17591C16.6848 5.89346 16.331 5.62368 15.9559 5.37161L16.6253 4.43759C16.947 3.98869 16.844 3.36398 16.3951 3.04225C15.9462 2.72053 15.3214 2.82362 14.9997 3.27252L14.1918 4.39975C13.2102 3.96793 12.1376 3.66528 11.0044 3.55075V1.5ZM10 7.5C7.79086 7.5 6 9.29086 6 11.5C6 13.7091 7.79086 15.5 10 15.5C12.2091 15.5 14 13.7091 14 11.5C14 9.29086 12.2091 7.5 10 7.5Z" fill="#C9C9C9"/>
   </svg>
-  <svg class="question-mark-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="9" cy="9" r="9" fill="#F0F0F0"/>
-    <path d="M8.25 10.4901H9.46875V10.4091C9.4858 9.42898 9.76705 8.99006 10.4915 8.54261C11.2543 8.08239 11.723 7.43466 11.723 6.47585C11.723 5.09091 10.6747 4.15341 9.1108 4.15341C7.67472 4.15341 6.52415 4.9929 6.46875 6.52699H7.7642C7.81534 5.62358 8.45881 5.22727 9.1108 5.22727C9.83523 5.22727 10.4233 5.70881 10.4233 6.46307C10.4233 7.09801 10.027 7.54545 9.51989 7.8608C8.72727 8.34659 8.25852 8.82812 8.25 10.4091V10.4901ZM8.89347 13.081C9.35795 13.081 9.74574 12.7017 9.74574 12.2287C9.74574 11.7642 9.35795 11.3807 8.89347 11.3807C8.42472 11.3807 8.04119 11.7642 8.04119 12.2287C8.04119 12.7017 8.42472 13.081 8.89347 13.081Z" fill="#303030"/>
-  </svg>
-
+  <div class="question-mark">
+    <p class="question-mark__description">
+      Также как существующая теория напрямую зависит от экономической целесообразности принимаемых решений.
+    </p>
+    <svg class="question-mark__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="9" cy="9" r="9" fill="#F0F0F0"/>
+      <path d="M8.25 10.4901H9.46875V10.4091C9.4858 9.42898 9.76705 8.99006 10.4915 8.54261C11.2543 8.08239 11.723 7.43466 11.723 6.47585C11.723 5.09091 10.6747 4.15341 9.1108 4.15341C7.67472 4.15341 6.52415 4.9929 6.46875 6.52699H7.7642C7.81534 5.62358 8.45881 5.22727 9.1108 5.22727C9.83523 5.22727 10.4233 5.70881 10.4233 6.46307C10.4233 7.09801 10.027 7.54545 9.51989 7.8608C8.72727 8.34659 8.25852 8.82812 8.25 10.4091V10.4901ZM8.89347 13.081C9.35795 13.081 9.74574 12.7017 9.74574 12.2287C9.74574 11.7642 9.35795 11.3807 8.89347 11.3807C8.42472 11.3807 8.04119 11.7642 8.04119 12.2287C8.04119 12.7017 8.42472 13.081 8.89347 13.081Z" fill="#303030"/>
+    </svg>
+  </div>
   <div class="product-card">
     <div class="product-card__unit">
       <div data-slider-name="first-product-card" class="product-card__unit-slider first-product-card-slider">
@@ -76,26 +80,26 @@
         </p>
       </div>
       <div class="product-card__unit-type dropdown colored-dropdown">
-        <div class="colored-dropdown__selected">
-          <p class="colored-dropdown__selected-option">Белое золото</p>
-          <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="dropdown__selected colored-dropdown__selected">
+          <p class="dropdown__selected-option colored-dropdown__selected-option">Белое золото</p>
+          <svg class="dropdown__selected-arrow" width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1.23755L4.23753 4.47508L7.47507 1.23755" stroke="#303030" stroke-width="2"/>
           </svg>
         </div>
-        <ul class="colored-dropdown__list">
-          <li class="colored-dropdown__list-unit selected">
+        <ul class="dropdown__list colored-dropdown__list">
+          <li class="dropdown__list-unit colored-dropdown__list-unit selected">
             <p>Белое золото</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
             </svg>
           </li>
-          <li class="colored-dropdown__list-unit">
+          <li class="dropdown__list-unit colored-dropdown__list-unit">
             <p>Желтое золото</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
             </svg>
           </li>
-          <li class="colored-dropdown__list-unit">
+          <li class="dropdown__list-unit colored-dropdown__list-unit">
             <p>Серебро</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
@@ -104,26 +108,26 @@
         </ul>
       </div>
       <div class="product-card__unit-size dropdown colored-dropdown">
-        <div class="colored-dropdown__selected">
-          <p class="colored-dropdown__selected-option">Размер: 16</p>
-          <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="dropdown__selected colored-dropdown__selected">
+          <p class="dropdown__selected-option colored-dropdown__selected-option">Размер: 16</p>
+          <svg class="dropdown__selected-arrow" width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1.23755L4.23753 4.47508L7.47507 1.23755" stroke="#303030" stroke-width="2"/>
           </svg>
         </div>
-        <ul class="colored-dropdown__list">
-          <li class="colored-dropdown__list-unit">
+        <ul class="dropdown__list colored-dropdown__list">
+          <li class="dropdown__list-unit colored-dropdown__list-unit">
             <p>Размер: 15</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
             </svg>
           </li>
-          <li class="colored-dropdown__list-unit selected">
+          <li class="dropdown__list-unit colored-dropdown__list-unit selected">
             <p>Размер: 16</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
             </svg>
           </li>
-          <li class="colored-dropdown__list-unit">
+          <li class="dropdown__list-unit colored-dropdown__list-unit">
             <p>Размер: 17</p>
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
@@ -131,6 +135,45 @@
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+  <div class="dropdown-wrapper">
+    <div class="dropdown transparent-dropdown">
+      <div class="dropdown__selected transparent-dropdown__selected">
+        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.99992 0C2.80476 0 0.205322 2.59944 0.205322 5.79456C0.205322 9.75981 5.39092 15.581 5.6117 15.8269C5.81907 16.0579 6.18114 16.0575 6.38813 15.8269C6.60892 15.581 11.7945 9.75981 11.7945 5.79456C11.7944 2.59944 9.19504 0 5.99992 0ZM5.99992 8.70997C4.39235 8.70997 3.08454 7.40213 3.08454 5.79456C3.08454 4.187 4.39238 2.87919 5.99992 2.87919C7.60745 2.87919 8.91526 4.18703 8.91526 5.79459C8.91526 7.40216 7.60745 8.70997 5.99992 8.70997Z" fill="#303030"/>
+        </svg>
+        <p class="dropdown__selected-option transparent-dropdown__selected-option">Санкт-Петербург</p>
+        <svg class="dropdown__selected-arrow transparent-dropdown__selected-arrow" width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1.23755L4.23753 4.47508L7.47507 1.23755" stroke="#303030" stroke-width="2"/>
+        </svg>
+      </div>
+      <ul class="dropdown__list transparent-dropdown__list">
+        <li class="dropdown__list-unit transparent-dropdown__list-unit selected">
+          <p>Санкт-Петербург</p>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
+          </svg>
+        </li>
+        <li class="dropdown__list-unit transparent-dropdown__list-unit ">
+          <p>Москва</p>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
+          </svg>
+        </li>
+        <li class="dropdown__list-unit transparent-dropdown__list-unit">
+          <p>Нижний Новгород</p>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
+          </svg>
+        </li>
+        <li class="dropdown__list-unit transparent-dropdown__list-unit">
+          <p>Ростов-на-Дону</p>
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.29998 7.89998L0.56665 4.16665L1.28332 3.44998L4.29998 6.46665L10.7 0.0666504L11.4167 0.783317L4.29998 7.89998Z" fill="black"/>
+          </svg>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

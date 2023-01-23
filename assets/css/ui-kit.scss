@@ -16,6 +16,55 @@ $orange: #E1A661;
 $white: #FFFFFF;
 $animation: all 0.5s ease;
 
+@mixin absolute-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin inter-light{
+  font-family: 'Inter',sans-serif;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+@mixin inter-regular{
+  font-family: 'Inter',sans-serif;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+@mixin inter-medium{
+  font-family: 'Inter',sans-serif;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+@mixin inter-semi-bold{
+  font-family: 'Inter',sans-serif;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+@mixin prata-regular{
+  font-family: 'Prata',sans-serif;
+  font-weight: 400;
+  line-height: 100%;
+}
+
 h2, h3 {
   @include prata-regular;
   font-size: 50px;
@@ -175,6 +224,7 @@ p {
   p {
     @include inter-light;
     padding: 0 0 0 10px;
+    transition: $animation;
   }
 
   &:hover {
@@ -182,6 +232,9 @@ p {
       path {
         fill: $grey-97;
       }
+    }
+    p{
+      color: $grey-97
     }
   }
 
@@ -234,16 +287,58 @@ p {
   }
 }
 
-.question-mark-icon {
-  cursor: pointer;
-
-  circle {
+.question-mark {
+  position: relative;
+  display: flex;
+  width: 18px;
+  height: 18px;
+  margin: 0 0 0 200px;
+  &__description{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 14px);
+    opacity: 0;
+    z-index: -1;
+    background: $white;
+    padding: 24px;
+    text-align: left;
+    @include inter-regular;
+    font-size: 14px;
+    line-height: 140%;
+    min-width: 271px;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
     transition: $animation;
+    &::before{
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: $white;
+    }
   }
 
-  &:hover {
+  &__icon{
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
     circle {
-      fill: $grey-d3;
+      transition: $animation;
+    }
+  }
+  &:hover {
+    .question-mark__icon{
+      circle {
+        fill: $grey-d3;
+      }
+    }
+    .question-mark__description{
+      opacity: 1;
+      z-index: 1;
     }
   }
 }
@@ -256,6 +351,7 @@ p {
 
   &__unit {
     position: absolute;
+    z-index: 3;
     left: 0;
     top: 0;
     border: 1px solid $grey-f0;
@@ -265,7 +361,7 @@ p {
     box-sizing: border-box;
     max-height: 370px;
     transition: $animation;
-
+    background: $white;
     &-slider {
       width: 200px;
       height: 200px;
@@ -398,83 +494,6 @@ p {
       margin: 0;
     }
 
-    .colored-dropdown {
-      width: 100%;
-      position: relative;
-
-      &__selected {
-        @include flex-space-between;
-        padding: 0 16px;
-        background: $grey-f0;
-        @include inter-regular;
-        font-size: 14px;
-        color: $grey-30;
-        line-height: 160%;
-        cursor: pointer;
-        transition: $animation;
-      }
-
-      &__list {
-        opacity: 0;
-        margin: 0;
-        position: absolute;
-        z-index: 1;
-        top: 100%;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        background: $white;
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        padding: 0;
-        transition: $animation;
-        &-unit {
-          display: flex;
-          align-items: center;
-          max-height: 0;
-          padding: 0 24px;
-          transition: $animation;
-          cursor: pointer;
-          p {
-            @include inter-regular;
-            font-size: 14px;
-            padding: 0 10px 0 0;
-            color: $grey-30;
-          }
-
-          svg {
-            transition: $animation;
-            opacity: 0;
-          }
-
-          &.selected {
-            background: $grey-fa;
-
-            svg {
-              opacity: 1;
-            }
-          }
-        }
-      }
-
-      &.active {
-        .colored-dropdown__selected {
-          padding: 9px 16px;
-        }
-
-        .colored-dropdown__list {
-          opacity: 1;
-          padding: 14px 0;
-
-          &-unit {
-            padding: 9px 24px;
-            max-height: 32px;
-          }
-        }
-      }
-    }
-
     &:hover {
       max-height: 480px;
       box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.1);
@@ -497,5 +516,108 @@ p {
     }
   }
 }
+.dropdown-wrapper{
+  max-width: 197px;
+}
+.dropdown {
+  width: 100%;
+  position: relative;
 
+  &__selected {
+    @include flex-space-between;
+    padding: 0 16px;
+    background: $grey-f0;
+    @include inter-regular;
+    font-size: 14px;
+    color: $grey-30;
+    line-height: 160%;
+    cursor: pointer;
+    transition: $animation;
+    &-arrow{
+      transition: $animation;
+    }
+  }
+
+  &__list {
+    opacity: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    background: $white;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 0;
+    transition: $animation;
+    &-unit {
+      display: flex;
+      align-items: center;
+      max-height: 0;
+      padding: 0 24px;
+      transition: $animation;
+      cursor: pointer;
+      pointer-events: none;
+      p {
+        @include inter-regular;
+        font-size: 14px;
+        padding: 0 10px 0 0;
+        color: $grey-30;
+      }
+
+      svg {
+        transition: $animation;
+        opacity: 0;
+      }
+
+      &.selected {
+        background: $grey-fa;
+
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.active {
+    .dropdown__selected {
+      padding: 9px 16px;
+      &-arrow{
+        transform: rotate(-180deg);
+      }
+    }
+
+    .dropdown__list {
+      opacity: 1;
+      padding: 14px 0;
+      &-unit {
+        position: relative;
+        z-index: 1;
+        padding: 9px 24px;
+        max-height: 32px;
+        pointer-events: unset;
+      }
+    }
+  }
+}
+
+.transparent-dropdown{
+  &__selected{
+    background: none;
+    padding: 12px 0;
+    justify-content: flex-start;
+    p{
+      padding: 0 8px 0 10px;
+    }
+  }
+  &.active{
+    .dropdown__selected{
+      padding: 12px 0;
+    }
+  }
+}
 

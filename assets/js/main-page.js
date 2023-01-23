@@ -12,42 +12,75 @@ sliders.forEach(slider => {
 
 const productCard = document.querySelectorAll('.product-card__unit')
 
-productCard.forEach( card => {
+productCard.forEach(card => {
     let mouseLeave = false;
     card.addEventListener('mouseleave', () => {
         mouseLeave = true;
         const dropdown = document.querySelectorAll('.dropdown')
-        dropdown.forEach( list => {
-            if(mouseLeave){
+        dropdown.forEach(list => {
+            if (mouseLeave) {
                 list.classList.remove('active');
             }
         })
     })
 })
 
-const coloredDropdownSelected = document.querySelectorAll('.colored-dropdown__selected');
+const coloredDropdownSelected = document.querySelectorAll('.dropdown__selected');
 
-coloredDropdownSelected.forEach( selected => {
+coloredDropdownSelected.forEach(selected => {
     selected.addEventListener('click', () => {
+
+        let selectedDropdown = selected.closest('.dropdown');
+
         const dropdown = document.querySelectorAll('.dropdown');
-        dropdown.forEach( list => {
-            list.classList.remove('active');
-        })
-        selected.closest('.colored-dropdown').classList.toggle('active');
+        if (selectedDropdown.classList.contains('active')) {
+            selectedDropdown.classList.remove('active')
+        } else {
+            dropdown.forEach(list => {
+                list.classList.remove('active')
+                selectedDropdown.classList.add('active')
+                document.addEventListener('click', (e) => {
+                    const target = e.target;
+                    const itsDropdown = target === list || list.contains(target);
+                    if (!itsDropdown) {
+                        list.classList.remove('active')
+                    }
+                })
+            })
+        }
     })
-} )
+})
 
 
-
-const allOptions = document.querySelectorAll('.colored-dropdown__list-unit');
-allOptions.forEach( option => {
+const allOptions = document.querySelectorAll('.dropdown__list-unit');
+allOptions.forEach(option => {
     option.addEventListener('click', () => {
-        option.closest('.colored-dropdown__list').querySelectorAll('.colored-dropdown__list-unit').forEach( selected => {
+        option.closest('.dropdown__list').querySelectorAll('.dropdown__list-unit').forEach(selected => {
             selected.classList.remove('selected');
         })
         option.classList.add('selected');
         let newSelectedOption = option.textContent;
-        let currentSelectedOption = option.closest('.colored-dropdown').querySelector('.colored-dropdown__selected').querySelector('.colored-dropdown__selected-option');
+        let currentSelectedOption = option.closest('.dropdown').querySelector('.dropdown__selected').querySelector('.dropdown__selected-option');
         currentSelectedOption.textContent = newSelectedOption;
+    })
+})
+
+const likeIcon = document.querySelectorAll('.like-icon');
+
+likeIcon.forEach(icon => {
+    icon.addEventListener('click', () => {
+        icon.classList.toggle('active');
+        const iconButton = icon.closest('.like-button');
+        iconButton && iconButton.classList.contains('active') ? iconButton.classList.add('active') : '';
+    })
+})
+
+const likeButton = document.querySelectorAll('.like-button');
+
+likeButton.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const icon = button.querySelector('.like-icon');
+        icon && icon.classList.contains('active') ? icon.classList.remove('active') : '';
     })
 })
