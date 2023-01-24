@@ -1,5 +1,4 @@
 @import "fonts.scss";
-@import "mixins.scss";
 @import "ui-kit.scss";
 
 
@@ -10,13 +9,363 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1330px;
-  padding: 0 15px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 1300px) {
   .container {
     width: calc(100% - 30px);
+    padding: 0 15px;
   }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+  }
+}
+
+
+
+
+.pre-header{
+  position: relative;
+  &__slider{
+    background: $grey-f8;
+    &-slide{
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      max-height: 560px;
+      position: relative;
+      &__left{
+        position: relative;
+        padding: 0 0 0 126px;
+        z-index: 1;
+        h3{
+          font-size: 20px;
+        }
+        h2{
+          font-size: 50px;
+          padding: 30px 0 54px 0;
+        }
+      }
+      &__right{
+        display: block;
+        max-width: 548px;
+        max-height: 548px;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 0 36px 0 0;
+      }
+      &__background{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+      }
+    }
+  }
+  &__navigation{
+    &-arrows{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(100% - 48px);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 24px;
+    }
+    &-dots{
+      position: absolute;
+      bottom: 24px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      ul{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        li{
+          position: relative;
+          text-indent: -9999px;
+          width: 6px;
+          height: 6px;
+          border: 1px solid $grey-30;
+          border-radius: 50%;
+          transition: $animation;
+          margin: 0 4px;
+          &.slick-active{
+            background: $grey-30;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .pre-header{
+    &__slider{
+      &-slide{
+        &__left{
+          padding: 0 0 0 80px;
+        }
+        &__right{
+          padding: 0 20px 0 0;
+        }
+      }
+    }
+    &__navigation{
+      &-arrows{
+        width: calc(100% - 24px);
+        margin: 0 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .pre-header{
+    &__slider{
+      &-slide{
+        display: flex !important;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: unset;
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px 0;
+        &__left{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          padding: 0 0 0 20px;
+          h3{
+            font-size: 20px;
+          }
+          h2{
+            font-size: 50px;
+            padding: 30px 0 54px 0;
+          }
+        }
+        &__right{
+          position: absolute;
+          z-index: 1;
+          right: 0;
+          bottom: 20px;
+          max-width: unset;
+          max-height: unset;
+          width: 40%;
+          height: auto;
+          object-fit: contain;
+          padding: 0 20px 0 0;
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+    &__navigation{
+      &-arrows{
+        display: none;
+      }
+      &-dots{
+        bottom: 12px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  #pre-header{
+    .container{
+      padding: 0;
+      width: 100%;
+    }
+  }
+  .pre-header{
+    &__slider{
+      &-slide{
+        height: 350px;
+        &__left{
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          padding: 0 0 0 10px;
+          h3{
+            font-size: 16px;
+          }
+          h2{
+            font-size: 40px;
+            padding: 20px 0 40px 0;
+          }
+          a{
+            font-size: 14px;
+            padding: 12px 0;
+          }
+        }
+        &__right{
+          padding: 0 10px 0 0;
+        }
+      }
+    }
+    &__navigation{
+      &-dots{
+        bottom: 10px;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+
+
+  .pre-header{
+    &__slider{
+      &-slide{
+        height: auto;
+        padding: 50px 0;
+        &__left{
+          width: fit-content;
+          align-self: center;
+          padding: 0 10px;
+          h3{
+            font-size: 18px;
+          }
+          h2{
+            font-size: 30px;
+            padding: 20px 0 30px 0;
+          }
+          a{
+            width: 100%;
+            max-width: unset;
+          }
+        }
+        &__right{
+          position: relative;
+          padding: 20px 10px 0 10px;
+          align-self: center;
+          margin: 0;
+        }
+      }
+    }
+    &__navigation{
+      &-dots{
+        bottom: 10px;
+      }
+    }
+  }
+
+}
+
+.popular-categories{
+
+  padding: 120px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  &__list{
+    margin: 0 -10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0 0 0;
+    &-unit{
+      display: flex;
+      margin: 20px 10px 0 10px;
+      box-sizing: border-box;
+      width: 200px;
+      height: 259px;
+      flex-shrink: 0;
+      a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        padding: 36px 36px 25px 36px;
+        background: $grey-f8;
+        box-sizing: border-box;
+        .image-wrapper{
+          position: relative;
+          width: 100%;
+          height: 100%;
+          img{
+            @include absolute-center;
+          }
+        }
+        p{
+          @include inter-regular;
+          font-size: 14px;
+          color: $grey-30;
+          margin: auto 0 0 0;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px){
+
+  .popular-categories{
+    &__list{
+      &-unit{
+        width: 30%;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px){
+
+  .popular-categories{
+    &__list{
+      margin: 0 -10px;
+      &-unit{
+        margin: 10px 5px 0 5px;
+        width: calc(33% - 10px);
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 576px){
+
+  .popular-categories{
+    &__list{
+      &-unit{
+        width: 45%;
+        min-height: 200px;
+        height: auto;
+        a{
+          padding: 15px 15px 15px 15px;
+          .image-wrapper{
+            width: 50%;
+            img{
+              width: 100%;
+              height: auto;
+            }
+          }
+          p{
+            white-space: unset;
+          }
+        }
+      }
+    }
+  }
+
 }

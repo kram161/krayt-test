@@ -34,5 +34,12 @@
   font-weight: 600;
   font-style: normal;
 }
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/RobotoCondensed-Light.eot");
+  src: local("☺"), url("../fonts/RobotoCondensed-Light.woff") format("woff"), url("../fonts/RobotoCondensed-Light.ttf") format("truetype"), url("../fonts/RobotoCondensed-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
 
 /*# sourceMappingURL=fonts.css.map */
