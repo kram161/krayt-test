@@ -6,6 +6,7 @@ sliders.forEach(slider => {
         infinite: true,
         arrows: false,
         dots: true,
+        draggable: false
     });
 
 })
