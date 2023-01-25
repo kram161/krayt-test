@@ -1279,6 +1279,7 @@ body {
 }
 .sale__slider-list__unit-slider .slick-list .slick-track .slick-slide {
   display: flex;
+  justify-content: center;
 }
 .sale__slider-list__unit-slider .slick-list .slick-track .slick-slide > div {
   display: flex;

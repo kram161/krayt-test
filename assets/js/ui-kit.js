@@ -3,10 +3,18 @@ const sliders = document.querySelectorAll('.product-card__unit-slider');
 sliders.forEach(slider => {
     const sliderName = slider.getAttribute('data-slider-name');
     $('.' + sliderName + '-slider').slick({
-        infinite: true,
+        infinite: false,
         arrows: false,
         dots: true,
-        draggable: false
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    draggable: true,
+                }
+            },
+        ]
     });
 
 })

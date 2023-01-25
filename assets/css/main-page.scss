@@ -404,6 +404,7 @@ body {
             display: flex;
             .slick-slide{
               display: flex;
+              justify-content: center;
               & > div{
                 display: flex;
               }
