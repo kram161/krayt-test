@@ -1041,18 +1041,17 @@ a {
       .header__burger {
         span {
           &:nth-child(1) {
-            transform: rotate(45deg);
-            top: 4px;
+            transform: rotate(45deg) translateY(6px);
           }
 
           &:nth-child(2) {
             margin: 0 0 0 15px;
+            transform: translateY(-1px);
             opacity: 0;
           }
 
           &:nth-child(3) {
-            transform: rotate(-45deg);
-            top: -5px;
+            transform: rotate(-45deg) translateY(-6px);
           }
         }
       }
