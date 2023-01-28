@@ -15,9 +15,11 @@ $grey-fa: #FAFAFA;
 $grey-91: #919191;
 $grey-f8: #F8F8F8;
 $grey-a2: #A2A2A2;
+$grey-49: #495159;
 $blue: #5B8A8F;
 $orange: #E1A661;
 $white: #FFFFFF;
+$green: #A7E492;
 $animation: all 0.5s ease;
 
 @mixin absolute-center {
@@ -202,10 +204,10 @@ a {
   color: $grey-30;
   border: 1px solid $grey-da;
   padding: 9px 11px;
-  width: fit-content;
   cursor: pointer;
   transition: $animation;
-
+  width: 50px;
+  box-sizing: border-box;
   &:hover {
     border: 1px solid $grey-30;
   }
@@ -371,23 +373,23 @@ a {
 
 .product-card {
   position: relative;
-  width: 310px !important;
-  height: 600px !important;
+  width: 100% !important;
+  height: 370px !important;
   display: flex !important;
-
+  transition: $animation;
   &__unit {
-    position: absolute;
+    position: relative;
     z-index: 3;
     left: 0;
     top: 0;
     border: 1px solid $grey-f0;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     padding: 16px 24px 26px 24px;
     box-sizing: border-box;
+    width: 310px;
     height: 370px;
     transition: $animation;
     background: $white;
@@ -404,6 +406,10 @@ a {
         .slick-slide {
           width: 200px;
           height: 200px !important;
+          & > div{
+            width: 200px;
+            height: 200px !important;
+          }
         }
       }
 
@@ -436,7 +442,6 @@ a {
         }
       }
     }
-
     .like-icon, .watch-icon {
       position: absolute;
       right: 22px;
@@ -452,16 +457,19 @@ a {
       top: 16px;
       left: 24px;
       display: flex;
-
+      height: 21px;
+      overflow: hidden;
       p {
+        display: block;
         @include inter-medium;
         font-size: 13px;
         color: $white;
         padding: 4px 12px;
         border-radius: 15px;
+        min-height: unset;
       }
 
-      .sale {
+      .sale-promotion {
         background: $blue;
         margin: 0 4px 0 0;
       }
@@ -546,6 +554,9 @@ a {
         }
       }
     }
+  }
+  &:hover{
+    height: 590px !important;
   }
 }
 

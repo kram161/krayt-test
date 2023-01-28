@@ -62,5 +62,36 @@ saleButton.forEach( button => {
     })
 })
 
+const previewSlider = document.querySelectorAll('.preview-slider');
 
+previewSlider.forEach(slider => {
+    const sliderName = slider.getAttribute('data-day-product-slider');
+    $('.' + sliderName).slick({
+        infinite: false,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: $('.' + sliderName + '-prev'),
+        nextArrow: $('.' + sliderName + '-next'),
+    })
+});
 
+const colorButton = document.querySelectorAll('.day-product__slider-slide__right-color__list-unit');
+
+colorButton.forEach( button => {
+    button.addEventListener('click', () => {
+        const allButtons = button.closest('.day-product__slider-slide__right-color__list').querySelector('.active');
+        button.classList.toggle('active');
+        allButtons ? allButtons.classList.remove('active') : '';
+    })
+})
+
+$('.day-product__slider').slick({
+    infinite: false,
+    arrows: true,
+    dots: false,
+    draggable: false,
+    speed: 500,
+    prevArrow: $('.day-product__navigation-prev'),
+    nextArrow: $('.day-product__navigation-next'),
+});

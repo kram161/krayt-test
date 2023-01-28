@@ -6,15 +6,7 @@ sliders.forEach(slider => {
         infinite: false,
         arrows: false,
         dots: true,
-        draggable: false,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    draggable: true,
-                }
-            },
-        ]
+        draggable: false
     });
 
 })
@@ -110,4 +102,14 @@ document.addEventListener('click', (e) => {
     if (!itsBurgerButton && !itsHeader || itsHeaderBackground) {
         header.classList.remove('active')
     }
+})
+
+const squareButton = document.querySelectorAll('.square-button');
+
+squareButton.forEach( button => {
+    button.addEventListener('click', () => {
+        const allButtons = button.closest('.day-product__slider-slide__right-size__list').querySelector('.active');
+        button.classList.toggle('active');
+        allButtons ? allButtons.classList.remove('active') : '';
+    })
 })
